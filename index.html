@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exquisive — Elite Sports Tournament 2026</title>
+  <meta name="description" content="Exquisive — Where Precision Meets Prestige. Elite Sports & E-Sports tournament. Apr 25 – May 24, 2026 | Hyderabad, India." />
+  <meta property="og:title" content="Exquisive — Elite Sports Tournament" />
+  <meta property="og:description" content="Where Precision Meets Prestige. Apr 25 – May 24, 2026 | Hyderabad, India." />
+
+  <!-- Preconnect for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Play CDN (newer & more Brave-friendly) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'xc': '#00f5ff',
+            'xg': '#ffd700',
+            'xr': '#ff2d55',
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"','sans-serif'],
+            body:    ['"DM Sans"','sans-serif'],
+            mono:    ['"Space Mono"','monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#050505] text-[#e2e2e2] font-body">
+
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+
+  <div id="loader" aria-hidden="true">
+    <div class="loader-word">Exquisive</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <p class="font-mono text-[0.6rem] tracking-[0.35em] uppercase text-white/30 mt-2">Loading the Elite Experience</p>
+  </div>
+
+  <div id="reg-panel" aria-hidden="true">
+    <button id="reg-panel-close" aria-label="Close registration panel">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="reg-panel-inner">
+      <p class="eyebrow mb-4">Join the Elite</p>
+      <h2 class="font-display text-5xl md:text-7xl text-white mb-4 tracking-wide">Choose Your Arena</h2>
+      <p class="text-white/40 text-sm font-mono tracking-widest uppercase mb-12">Click on a category to register</p>
+      <div class="reg-cats">
+        <div class="reg-cat-card category-link" data-url="https://google.com" style="--accent:var(--ex-cyan); cursor: pointer;">
+          <div class="reg-cat-icon">🎮</div>
+          <h3 class="font-display text-4xl text-white tracking-wide mb-3">E-Sports</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-2">Compete in elite e-sports tournaments. Click to register.</p>
+          <div class="inline-flex items-center gap-2 mt-2 text-xc text-xs font-mono tracking-wider">
+            <span>➤ Register Now</span>
+          </div>
+        </div>
+        <div class="reg-cat-card category-link" data-url="https://google.com" style="--accent:var(--ex-gold); cursor: pointer;">
+          <div class="reg-cat-icon">🏆</div>
+          <h3 class="font-display text-4xl text-white tracking-wide mb-3">Sports</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-2">Take part in badminton & basketball. Click to register.</p>
+          <div class="inline-flex items-center gap-2 mt-2 text-xg text-xs font-mono tracking-wider">
+            <span>➤ Register Now</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" aria-hidden="true">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#organizers">Organizers</a>
+    <a href="#preview">Preview</a>
+    <a href="#sponsors">Sponsors</a>
+    <a href="#register">Register</a>
+    <div class="flex gap-4 mt-4">
+      <a href="https://instagram.com/org.exqusive" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram Org">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://instagram.com/sports.exquisive" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram Sports">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://instagram.com/esports.exquisive" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram ESports">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="#hero" class="nav-logo">Exquisive</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about"      class="nav-link">About</a>
+        <a href="#schedule"   class="nav-link">Schedule</a>
+        <a href="#organizers" class="nav-link">Organizers</a>
+        <a href="#preview"    class="nav-link">Preview</a>
+        <a href="#sponsors"   class="nav-link">Sponsors</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button id="reg-open-btn" class="btn-primary hidden sm:inline-flex">Register Now</button>
+        <button id="menu-btn" class="md:hidden" aria-label="Toggle menu" aria-expanded="false">
+          <div class="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div id="hero-bg"></div>
+    <div id="hero-overlay"></div>
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="blob w-[700px] h-[700px] bg-xc/[0.07] -top-40 -left-40" aria-hidden="true"></div>
+    <div class="blob w-[500px] h-[500px] bg-xg/[0.06] bottom-0 right-0"  aria-hidden="true"></div>
+    <div class="hero-content px-6">
+      <div class="h-anim mb-4">
+        <span class="hero-eyebrow">
+          <span class="dot-accent mr-3"></span>
+          Apr 25 – May 24, 2026 &nbsp;|&nbsp; Hyderabad, India
+          <span class="dot-accent ml-3"></span>
+        </span>
+      </div>
+      <div class="h-anim mb-3" style="transition-delay:.15s">
+        <h1 class="hero-title">Exquisive</h1>
+      </div>
+      <div class="h-anim mb-10" style="transition-delay:.3s">
+        <p class="hero-tagline">Where &nbsp; Precision &nbsp; Meets &nbsp; Prestige</p>
+      </div>
+      <div class="h-anim flex flex-wrap items-center justify-center gap-4 mb-12" style="transition-delay:.45s">
+        <button id="hero-reg-btn" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Register Now
+        </button>
+        <a href="#preview" class="btn-glass">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+          Watch Highlights
+        </a>
+      </div>
+      <div class="h-anim max-w-2xl mx-auto" style="transition-delay:.62s">
+        <div class="glass-card p-6 flex flex-col sm:flex-row items-center gap-6">
+          <div id="countdown-box" class="flex items-center gap-3">
+            <div class="countdown-unit text-center">
+              <div class="cd-num" id="cd-d">00</div>
+              <div class="cd-label">Days</div>
+            </div>
+            <div class="cd-sep">:</div>
+            <div class="countdown-unit text-center">
+              <div class="cd-num" id="cd-h">00</div>
+              <div class="cd-label">Hours</div>
+            </div>
+            <div class="cd-sep">:</div>
+            <div class="countdown-unit text-center">
+              <div class="cd-num" id="cd-m">00</div>
+              <div class="cd-label">Mins</div>
+            </div>
+            <div class="cd-sep">:</div>
+            <div class="countdown-unit text-center">
+              <div class="cd-num" id="cd-s">00</div>
+              <div class="cd-label">Secs</div>
+            </div>
+          </div>
+          <div class="hidden sm:block w-px h-16 bg-white/10"></div>
+          <div class="sm:hidden h-px w-full bg-white/10"></div>
+          <div class="flex gap-6 sm:gap-8">
+            <div class="stat-item text-center">
+              <div class="stat-num text-xc">500<span class="text-xl">+</span></div>
+              <div class="stat-lbl">Players</div>
+            </div>
+            <div class="stat-item text-center">
+              <div class="stat-num text-xg">5</div>
+              <div class="stat-lbl">Events</div>
+            </div>
+            <div class="stat-item text-center">
+              <div class="stat-num text-xr">2</div>
+              <div class="stat-lbl">Disciplines</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="font-mono text-[0.52rem] tracking-[0.3em] text-white/30 uppercase">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section id="about" class="py-28 px-6 relative overflow-hidden">
+    <div class="blob w-[600px] h-[600px] bg-xc/[0.04] top-0 left-1/2 -translate-x-1/2" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20">
+        <p class="eyebrow reveal mb-4">The Tournament</p>
+        <h2 class="section-title reveal mb-6" style="transition-delay:.1s">
+          Born for<br/><span class="shimmer-text">The Elite</span>
+        </h2>
+        <p class="reveal max-w-2xl mx-auto text-white/50 text-base leading-relaxed" style="transition-delay:.2s">
+          Exquisive is not merely a competition — it is a statement. Elite sports and e-sports disciplines, world-class infrastructure, and an atmosphere that demands nothing short of perfection. From the opening ceremony to the grand finals, every moment is curated for greatness.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mb-20">
+        <div class="about-card reveal d1" style="--accent:var(--ex-cyan)">
+          <div class="icon-wrap bg-xc/10 text-xc" style="color:var(--ex-cyan);background:rgba(0,245,255,0.1)">⚡</div>
+          <h3 class="font-display text-3xl text-white mb-3 tracking-wide">Sports</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-4">
+            Two elite physical disciplines with world-class officiating and facilities. Badminton and Basketball — each a battlefield of skill, stamina, and strategy.
+          </p>
+          <ul class="space-y-1.5">
+            <li class="flex items-center gap-2 text-xs text-white/40 font-mono">
+              <span class="dot-accent"></span> Badminton — May 23 & 24
+            </li>
+            <li class="flex items-center gap-2 text-xs text-white/40 font-mono">
+              <span class="dot-accent" style="background:var(--ex-gold);box-shadow:0 0 10px var(--ex-gold)"></span> Basketball — May 9 & 10
+            </li>
+          </ul>
+        </div>
+        <div class="about-card reveal d2" style="--accent:var(--ex-gold)">
+          <div class="icon-wrap" style="color:var(--ex-gold);background:rgba(255,215,0,0.1)">🎮</div>
+          <h3 class="font-display text-3xl text-white mb-3 tracking-wide">E-Sports</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-4">
+            Three high-octane e-sports tournaments running simultaneously across six days. Compete, spectate, and witness digital excellence at its peak.
+          </p>
+          <ul class="space-y-1.5">
+            <li class="flex items-center gap-2 text-xs text-white/40 font-mono">
+              <span class="dot-accent"></span> Valorant Skirmish
+            </li>
+            <li class="flex items-center gap-2 text-xs text-white/40 font-mono">
+              <span class="dot-accent" style="background:var(--ex-gold);box-shadow:0 0 10px var(--ex-gold)"></span> Minecraft Bedwars
+            </li>
+            <li class="flex items-center gap-2 text-xs text-white/40 font-mono">
+              <span class="dot-accent" style="background:var(--ex-crimson);box-shadow:0 0 10px var(--ex-crimson)"></span> COD Mobile 2v2
+            </li>
+          </ul>
+        </div>
+        <div class="about-card reveal d3" style="--accent:var(--ex-crimson)">
+          <div class="icon-wrap" style="color:var(--ex-crimson);background:rgba(255,45,85,0.1)">🌟</div>
+          <h3 class="font-display text-3xl text-white mb-3 tracking-wide">Experience</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-4">
+            Beyond competition — a curated luxury experience. VIP hospitality, live broadcast streaming, player lounges, and post-event gala. Hyderabad's finest venue, elevated.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="event-badge text-xr" style="background:rgba(255,45,85,0.12);color:var(--ex-crimson)">Live Stream</span>
+            <span class="event-badge text-xg" style="background:rgba(255,215,0,0.1);color:var(--ex-gold)">VIP Lounge</span>
+            <span class="event-badge text-xc" style="background:rgba(0,245,255,0.1);color:var(--ex-cyan)">Pro Broadcast</span>
+            <span class="event-badge" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.45)">Awards Gala</span>
+          </div>
+        </div>
+      </div>
+      <div id="stats-row" class="glass-card p-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="stat-item">
+            <div class="stat-num text-xc" data-count="500" data-suffix="+">0+</div>
+            <div class="stat-lbl mt-1">Registered Players</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num text-xg" data-count="5">0</div>
+            <div class="stat-lbl mt-1">Events</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num text-xr" data-count="8">0</div>
+            <div class="stat-lbl mt-1">Days of Action</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num text-white" data-count="2">0</div>
+            <div class="stat-lbl mt-1">Disciplines</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr-glow" />
+
+  <section id="schedule" class="py-28 px-6 relative overflow-hidden">
+    <div class="blob w-[500px] h-[500px] bg-xg/[0.04] top-1/4 right-0" aria-hidden="true"></div>
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16">
+        <p class="eyebrow reveal mb-4">Tournament Calendar</p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <h2 class="section-title reveal" style="transition-delay:.1s">The Events<br/>Schedule</h2>
+          <p class="reveal text-white/45 text-sm max-w-xs leading-relaxed" style="transition-delay:.2s">
+            Sports and E-Sports across multiple dates. Every match a showcase of precision and excellence.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-3 mb-8 flex-wrap reveal">
+        <button class="day-tab active" data-day="badminton-d1">Badminton — May 23</button>
+        <button class="day-tab"        data-day="badminton-d2">Badminton — May 24</button>
+        <button class="day-tab"        data-day="basketball-d1">Basketball — May 9</button>
+        <button class="day-tab"        data-day="basketball-d2">Basketball — May 10</button>
+        <button class="day-tab"        data-day="esports">E-Sports — Apr 25–30</button>
+      </div>
+      <div id="panel-badminton-d1" class="schedule-panel active space-y-3">
+        <div class="glass-card p-4 mb-6 reveal">
+          <p class="eyebrow text-xg">Badminton · Day 1</p>
+          <h3 class="font-display text-4xl text-white mt-1">May 23 — Opening Rounds</h3>
+        </div>
+        <div class="event-item reveal d1">
+          <div class="event-time">07:30</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Player Registration & Accreditation</span>
+              <span class="event-badge" style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.4)">All</span>
+            </div>
+            <p class="text-white/35 text-xs">Main arena lobby — collect badges and welcome packs</p>
+          </div>
+        </div>
+        <div class="event-item reveal d2">
+          <div class="event-time">09:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Opening Ceremony</span>
+              <span class="event-badge text-xg" style="background:rgba(255,215,0,.12)">Feature</span>
+            </div>
+            <p class="text-white/35 text-xs">Inaugural address and ceremonial first shuttle</p>
+          </div>
+        </div>
+        <div class="event-item reveal d3">
+          <div class="event-time">10:30</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Men's Singles — Round of 64</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Qualifier</span>
+            </div>
+            <p class="text-white/35 text-xs">Courts 1–4 — Group stage matches</p>
+          </div>
+        </div>
+        <div class="event-item reveal d4">
+          <div class="event-time">13:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Women's Singles — Round of 64</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Qualifier</span>
+            </div>
+            <p class="text-white/35 text-xs">Courts 1–4 — Group stage matches</p>
+          </div>
+        </div>
+        <div class="event-item reveal d5">
+          <div class="event-time">16:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Mixed Doubles — Qualifiers</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Qualifier</span>
+            </div>
+            <p class="text-white/35 text-xs">Centre Court — Live spectators</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel-badminton-d2" class="schedule-panel space-y-3">
+        <div class="glass-card p-4 mb-6">
+          <p class="eyebrow text-xc">Badminton · Day 2</p>
+          <h3 class="font-display text-4xl text-white mt-1">May 24 — Semi-Finals & Finals</h3>
+        </div>
+        <div class="event-item">
+          <div class="event-time">09:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Men's & Women's Singles — Quarter-Finals</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Quarter-Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Courts 1–2 — Best of 3 sets</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">11:30</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Mixed Doubles — Semi-Finals</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Semi-Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Centre Court — Live broadcast</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">14:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Men's & Women's Singles — Semi-Finals</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Semi-Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Centre Court — Packed arena</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">16:30</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Grand Finals — All Categories</span>
+              <span class="event-badge text-xg" style="background:rgba(255,215,0,.12)">Grand Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Centre Court — Trophy presentation to follow</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">19:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Awards & Closing Ceremony</span>
+              <span class="event-badge text-xr" style="background:rgba(255,45,85,.1)">Ceremony</span>
+            </div>
+            <p class="text-white/35 text-xs">Main arena — Trophy presentation, national anthem</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel-basketball-d1" class="schedule-panel space-y-3">
+        <div class="glass-card p-4 mb-6">
+          <p class="eyebrow text-xg">Basketball · Day 1</p>
+          <h3 class="font-display text-4xl text-white mt-1">May 9 — Group Stage</h3>
+        </div>
+        <div class="event-item">
+          <div class="event-time">08:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Team Registration & Warm-Up</span>
+              <span class="event-badge" style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.4)">All</span>
+            </div>
+            <p class="text-white/35 text-xs">Main court — team check-in and warm-up drills</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">10:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Group Stage — Pool A Matches</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Group Stage</span>
+            </div>
+            <p class="text-white/35 text-xs">Court 1 — 4 teams, round-robin format</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">12:30</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Group Stage — Pool B Matches</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Group Stage</span>
+            </div>
+            <p class="text-white/35 text-xs">Court 2 — 4 teams, round-robin format</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">15:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Group Stage — Pool C & D Matches</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Group Stage</span>
+            </div>
+            <p class="text-white/35 text-xs">Courts 1 & 2 — Simultaneous matches</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel-basketball-d2" class="schedule-panel space-y-3">
+        <div class="glass-card p-4 mb-6">
+          <p class="eyebrow text-xc">Basketball · Day 2</p>
+          <h3 class="font-display text-4xl text-white mt-1">May 10 — Knockouts & Finals</h3>
+        </div>
+        <div class="event-item">
+          <div class="event-time">09:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Quarter-Finals</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Quarter-Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Courts 1 & 2 — Top 8 teams advance</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">12:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Semi-Finals</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Semi-Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Main court — Live spectators</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">15:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">3rd Place Match</span>
+              <span class="event-badge" style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.4)">Bronze</span>
+            </div>
+            <p class="text-white/35 text-xs">Main court — Bronze medal match</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">17:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Grand Final</span>
+              <span class="event-badge text-xg" style="background:rgba(255,215,0,.12)">Grand Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Main court — Championship match, full broadcast</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">19:00</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Awards Ceremony</span>
+              <span class="event-badge text-xr" style="background:rgba(255,45,85,.1)">Ceremony</span>
+            </div>
+            <p class="text-white/35 text-xs">Main arena — Trophy presentation</p>
+          </div>
+        </div>
+      </div>
+      <div id="panel-esports" class="schedule-panel space-y-3">
+        <div class="glass-card p-4 mb-6">
+          <p class="eyebrow text-xr">E-Sports · Apr 25 – 30</p>
+          <h3 class="font-display text-4xl text-white mt-1">Six Days of Digital Combat</h3>
+        </div>
+        <div class="event-item">
+          <div class="event-time">Apr 25</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">All Games — Registration & Seeding</span>
+              <span class="event-badge" style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.4)">Day 1</span>
+            </div>
+            <p class="text-white/35 text-xs">Valorant Skirmish · Minecraft Bedwars · COD Mobile 2v2 — Team verification and bracket draw</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">Apr 26</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Group Stage — Valorant & COD Mobile</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Group Stage</span>
+            </div>
+            <p class="text-white/35 text-xs">Valorant Skirmish Group A/B · COD Mobile 2v2 Bracket Phase 1</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">Apr 27</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Group Stage — Minecraft Bedwars</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Group Stage</span>
+            </div>
+            <p class="text-white/35 text-xs">Minecraft Bedwars — Pool matches and elimination rounds</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">Apr 28</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">All Games — Quarter-Finals</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Quarter-Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Valorant · Bedwars · COD Mobile — Top 8 per title advance</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">Apr 29</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">All Games — Semi-Finals</span>
+              <span class="event-badge text-xc" style="background:rgba(0,245,255,.1)">Semi-Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Live-streamed semi-finals across all three titles</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">Apr 30</div>
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white font-medium text-sm">Grand Finals — All Three Games</span>
+              <span class="event-badge text-xg" style="background:rgba(255,215,0,.12)">Grand Final</span>
+            </div>
+            <p class="text-white/35 text-xs">Valorant Skirmish · Minecraft Bedwars · COD Mobile 2v2 — Champions crowned</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr-glow" />
+
+  <section id="organizers" class="py-28 px-6 relative overflow-hidden">
+    <div class="blob w-[600px] h-[600px] bg-xr/[0.04] bottom-0 left-0" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="eyebrow reveal mb-4">Meet The Team</p>
+        <h2 class="section-title reveal" style="transition-delay:.1s">The Organizers</h2>
+        <p class="reveal text-white/45 text-sm mt-4 max-w-xl mx-auto" style="transition-delay:.2s">
+          The minds and hands behind Exquisive 2026 — hover to learn more.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="athlete-card reveal d1">
+          <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80&fit=crop" alt="Head Organizer" loading="lazy" />
+          <div class="athlete-overlay">
+            <span class="event-badge mb-2 self-start text-xc" style="background:rgba(0,245,255,.15)">Director</span>
+            <h3 class="text-white font-display text-xl tracking-wide">To Be Added</h3>
+            <p class="text-white/45 text-xs font-mono">Head Organizer</p>
+            <div class="athlete-stat-reveal mt-2">
+              <div class="hr-glow mb-2"></div>
+              <p class="text-xs text-white/50">Information to be added</p>
+            </div>
+          </div>
+        </div>
+        <div class="athlete-card reveal d2">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=80&fit=crop" alt="Sports Director" loading="lazy" />
+          <div class="athlete-overlay">
+            <span class="event-badge mb-2 self-start text-xg" style="background:rgba(255,215,0,.15)">Sports</span>
+            <h3 class="text-white font-display text-xl tracking-wide">To Be Added</h3>
+            <p class="text-white/45 text-xs font-mono">Sports Director</p>
+            <div class="athlete-stat-reveal mt-2">
+              <div class="hr-glow mb-2"></div>
+              <p class="text-xs text-white/50">Information to be added</p>
+            </div>
+          </div>
+        </div>
+        <div class="athlete-card reveal d3">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&fit=crop" alt="E-Sports Lead" loading="lazy" />
+          <div class="athlete-overlay">
+            <span class="event-badge mb-2 self-start text-xc" style="background:rgba(0,245,255,.15)">E-Sports</span>
+            <h3 class="text-white font-display text-xl tracking-wide">To Be Added</h3>
+            <p class="text-white/45 text-xs font-mono">E-Sports Lead</p>
+            <div class="athlete-stat-reveal mt-2">
+              <div class="hr-glow mb-2"></div>
+              <p class="text-xs text-white/50">Information to be added</p>
+            </div>
+          </div>
+        </div>
+        <div class="athlete-card reveal d4">
+          <img src="https://images.unsplash.com/photo-1539794830467-1f1755804d13?w=600&q=80&fit=crop" alt="Logistics Head" loading="lazy" />
+          <div class="athlete-overlay">
+            <span class="event-badge mb-2 self-start text-xr" style="background:rgba(255,45,85,.15)">Logistics</span>
+            <h3 class="text-white font-display text-xl tracking-wide">To Be Added</h3>
+            <p class="text-white/45 text-xs font-mono">Logistics Head</p>
+            <div class="athlete-stat-reveal mt-2">
+              <div class="hr-glow mb-2"></div>
+              <p class="text-xs text-white/50">Information to be added</p>
+            </div>
+          </div>
+        </div>
+        <div class="athlete-card reveal d5">
+          <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&q=80&fit=crop" alt="Media Lead" loading="lazy" />
+          <div class="athlete-overlay">
+            <span class="event-badge mb-2 self-start text-xg" style="background:rgba(255,215,0,.15)">Media</span>
+            <h3 class="text-white font-display text-xl tracking-wide">To Be Added</h3>
+            <p class="text-white/45 text-xs font-mono">Media & PR</p>
+            <div class="athlete-stat-reveal mt-2">
+              <div class="hr-glow mb-2"></div>
+              <p class="text-xs text-white/50">Information to be added</p>
+            </div>
+          </div>
+        </div>
+        <div class="athlete-card reveal d6">
+          <img src="https://images.unsplash.com/photo-1547952585-07dc2aaa42f4?w=600&q=80&fit=crop" alt="Partnerships Lead" loading="lazy" />
+          <div class="athlete-overlay">
+            <span class="event-badge mb-2 self-start text-xr" style="background:rgba(255,45,85,.15)">Partners</span>
+            <h3 class="text-white font-display text-xl tracking-wide">To Be Added</h3>
+            <p class="text-white/45 text-xs font-mono">Partnerships Lead</p>
+            <div class="athlete-stat-reveal mt-2">
+              <div class="hr-glow mb-2"></div>
+              <p class="text-xs text-white/50">Information to be added</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12 reveal">
+        <a href="https://instagram.com/org.exqusive" target="_blank" rel="noopener" class="btn-glass">
+          Contact the Team
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr-glow" />
+
+  <section id="preview" class="py-28 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="eyebrow reveal mb-4">Exclusive Footage</p>
+        <h2 class="section-title reveal" style="transition-delay:.1s">The Preview</h2>
+        <p class="reveal text-white/45 text-sm mt-4" style="transition-delay:.2s">Click any video to expand and play</p>
+      </div>
+      <div class="preview-grid reveal">
+        <div class="preview-item" data-video="preview-1.mp4">
+          <div class="preview-thumb">
+            <div class="preview-placeholder">
+              <span class="preview-label font-mono text-xs text-white/40 tracking-widest uppercase">Video 1</span>
+              <span class="preview-note font-mono text-[0.55rem] text-white/20 tracking-wider uppercase mt-1">Drop mp4 here</span>
+            </div>
+            <div class="preview-play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+            </div>
+            <div class="preview-hover-overlay"></div>
+          </div>
+        </div>
+        <div class="preview-item" data-video="preview-2.mp4">
+          <div class="preview-thumb">
+            <div class="preview-placeholder">
+              <span class="preview-label font-mono text-xs text-white/40 tracking-widest uppercase">Video 2</span>
+              <span class="preview-note font-mono text-[0.55rem] text-white/20 tracking-wider uppercase mt-1">Drop mp4 here</span>
+            </div>
+            <div class="preview-play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+            </div>
+            <div class="preview-hover-overlay"></div>
+          </div>
+        </div>
+        <div class="preview-item" data-video="preview-3.mp4">
+          <div class="preview-thumb">
+            <div class="preview-placeholder">
+              <span class="preview-label font-mono text-xs text-white/40 tracking-widest uppercase">Video 3</span>
+              <span class="preview-note font-mono text-[0.55rem] text-white/20 tracking-wider uppercase mt-1">Drop mp4 here</span>
+            </div>
+            <div class="preview-play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+            </div>
+            <div class="preview-hover-overlay"></div>
+          </div>
+        </div>
+        <div class="preview-item" data-video="preview-4.mp4">
+          <div class="preview-thumb">
+            <div class="preview-placeholder">
+              <span class="preview-label font-mono text-xs text-white/40 tracking-widest uppercase">Video 4</span>
+              <span class="preview-note font-mono text-[0.55rem] text-white/20 tracking-wider uppercase mt-1">Drop mp4 here</span>
+            </div>
+            <div class="preview-play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+            </div>
+            <div class="preview-hover-overlay"></div>
+          </div>
+        </div>
+        <div class="preview-item" data-video="preview-5.mp4">
+          <div class="preview-thumb">
+            <div class="preview-placeholder">
+              <span class="preview-label font-mono text-xs text-white/40 tracking-widest uppercase">Video 5</span>
+              <span class="preview-note font-mono text-[0.55rem] text-white/20 tracking-wider uppercase mt-1">Drop mp4 here</span>
+            </div>
+            <div class="preview-play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+            </div>
+            <div class="preview-hover-overlay"></div>
+          </div>
+        </div>
+        <div class="preview-item" data-video="preview-6.mp4">
+          <div class="preview-thumb">
+            <div class="preview-placeholder">
+              <span class="preview-label font-mono text-xs text-white/40 tracking-widest uppercase">Video 6</span>
+              <span class="preview-note font-mono text-[0.55rem] text-white/20 tracking-wider uppercase mt-1">Drop mp4 here</span>
+            </div>
+            <div class="preview-play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9V3z"/></svg>
+            </div>
+            <div class="preview-hover-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Video player">
+    <button id="lb-close" class="lb-close" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <video id="lb-video" controls playsinline>
+      <source id="lb-video-src" src="" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <hr class="hr-glow" />
+
+  <section id="sponsors" class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="eyebrow reveal mb-4">Proud Partners</p>
+        <h2 class="section-title reveal" style="transition-delay:.1s">Our Sponsors</h2>
+      </div>
+      <div class="mb-12 reveal">
+        <p class="font-mono text-[0.58rem] tracking-[0.35em] uppercase text-white/25 text-center mb-6">— Official Partners —</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div class="sponsor-pill plat float">
+            <span class="font-display text-2xl tracking-widest">Vanta</span>
+          </div>
+          <div class="sponsor-pill plat float-slow">
+            <span class="font-display text-xl tracking-widest text-center leading-tight">Communitie<br/>Hyderabad</span>
+          </div>
+          <div class="sponsor-pill plat float">
+            <span class="font-display text-xl tracking-widest text-center leading-tight">Anrerp<br/>Entertainment</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-16 glass-card p-8 text-center reveal">
+        <p class="eyebrow mb-3">Interested?</p>
+        <h3 class="font-display text-4xl text-white mb-4">Become a Partner</h3>
+        <p class="text-white/45 text-sm mb-6 max-w-md mx-auto">
+          Align your brand with India's most prestigious multi-sport event. Premium visibility across broadcast, digital, and on-ground activations.
+        </p>
+        <a href="https://instagram.com/org.exqusive" target="_blank" rel="noopener" class="btn-glass">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          DM @org.exqusive
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr-glow" />
+
+  <section id="register" class="py-28 px-6 relative overflow-hidden">
+    <div class="blob w-[700px] h-[700px] bg-xc/[0.05] top-0 right-0" aria-hidden="true"></div>
+    <div class="blob w-[500px] h-[500px] bg-xg/[0.04] bottom-0 left-0" aria-hidden="true"></div>
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="eyebrow reveal mb-4">Join the Elite</p>
+      <h2 class="section-title reveal" style="transition-delay:.1s">Register Now</h2>
+      <p class="reveal text-white/45 text-sm mt-4 max-w-md mx-auto" style="transition-delay:.2s">
+        Choose your category and secure your spot. E-Sports and Sports registrations are handled separately via Google Forms.
+      </p>
+      <div class="reveal inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full border border-xr/30 bg-xr/10" style="transition-delay:.3s">
+        <span class="w-2 h-2 rounded-full bg-xr animate-pulse"></span>
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-xr">E-Sports closes Apr 20 · Sports closes May 1</span>
+      </div>
+      <div class="mt-12 reveal" style="transition-delay:.4s">
+        <button id="reg-section-btn" class="btn-primary text-base px-10 py-5">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Choose Your Category
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/[0.06] pt-16 pb-8 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="md:col-span-2">
+          <div class="nav-logo text-3xl mb-3">Exquisive</div>
+          <p class="text-white/35 text-sm leading-relaxed max-w-xs mb-6">
+            Where Precision Meets Prestige. The definitive elite sports & e-sports tournament — crafted for champions, witnessed by thousands.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://instagram.com/org.exqusive" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram Org">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://instagram.com/sports.exquisive" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram Sports">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://instagram.com/esports.exquisive" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram E-Sports">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-mono text-[0.6rem] tracking-[0.3em] uppercase text-white/30 mb-5">Navigate</h4>
+          <ul class="space-y-3">
+            <li><a href="#about"      class="footer-link">About Exquisive</a></li>
+            <li><a href="#schedule"   class="footer-link">Tournament Schedule</a></li>
+            <li><a href="#organizers" class="footer-link">The Organizers</a></li>
+            <li><a href="#preview"    class="footer-link">Preview</a></li>
+            <li><a href="#sponsors"   class="footer-link">Sponsors</a></li>
+            <li><a href="#register"   class="footer-link">Register</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-mono text-[0.6rem] tracking-[0.3em] uppercase text-white/30 mb-5">Contact</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="footer-link">FAQs</a></li>
+            <li><a href="#" class="footer-link">Media & Press</a></li>
+            <li><a href="#" class="footer-link">Volunteer</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+          </ul>
+          <div class="mt-6 space-y-2">
+            <p class="font-mono text-[0.58rem] tracking-[0.25em] uppercase text-white/25 mb-3">Instagram DMs</p>
+            <a href="https://instagram.com/org.exqusive" target="_blank" rel="noopener" class="footer-link flex items-center gap-2 text-xc/70 hover:text-xc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+              @org.exqusive
+            </a>
+            <a href="https://instagram.com/sports.exquisive" target="_blank" rel="noopener" class="footer-link flex items-center gap-2">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+              @sports.exquisive
+            </a>
+            <a href="https://instagram.com/esports.exquisive" target="_blank" rel="noopener" class="footer-link flex items-center gap-2">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+              @esports.exquisive
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-glow mb-6" />
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-white/25 text-xs font-mono">
+          © 2026 Exquisive Sports Pvt. Ltd. All rights reserved.
+        </p>
+        <div class="flex items-center gap-2">
+          <span class="dot-accent"></span>
+          <span class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-white/25">Hyderabad, India</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
