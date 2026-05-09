@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXQUISIVE // PRECISION // PRESTIGE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@100;200;300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SCANLINE OVERLAY -->
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       HEADER // NAV COMMAND BAR
+  ═══════════════════════════════════════ -->
+  <header id="header">
+    <div class="header-inner">
+      <div class="logo-zone">
+        <div class="sys-indicator" aria-hidden="true"></div>
+        <a href="#" class="logo-link">
+          <img src="https://raw.githubusercontent.com/JustCallMe-Sni/exquisive-assets/main/logo.png"
+               alt="EXQUISIVE"
+               class="logo-img"
+               onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';" />
+          <span class="logo-text" style="display:none;">EXQUISIVE</span>
+        </a>
+        <span class="sys-label">[SYSTEM_STATUS: <span class="accent-cyan">ACTIVE</span>]</span>
+      </div>
+
+      <nav class="nav-links" role="navigation" aria-label="Primary">
+        <a href="#ecosystem" class="nav-item" data-index="01">ECOSYSTEM</a>
+        <a href="#team" class="nav-item" data-index="02">OPERATORS</a>
+        <a href="#location" class="nav-item" data-index="03">LOCATION</a>
+      </nav>
+
+      <div class="header-hud">
+        <div class="clock-block">
+          <span class="hud-label">SYS_TIME //</span>
+          <span id="live-clock" class="clock-value">00:00:00</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       HERO // TERMINAL MISSION BRIEF
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-inner">
+
+      <div class="terminal-panel reveal-element">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="terminal-title">EXQUISIVE_SYSTEM_v3.7 // root@hyd</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="prompt">root@EXQUISIVE:~$</span>
+            <span class="cmd-text" id="cmd-1"></span>
+            <span class="cursor" id="cursor-1">▋</span>
+          </div>
+          <div class="terminal-output" id="terminal-output" style="display:none;">
+            <div class="output-block">
+              <span class="out-label accent-cyan">// MISSION_BRIEF</span>
+            </div>
+            <div class="output-block">
+              <span class="out-line">EXQUISIVE is a next-generation competitive</span>
+            </div>
+            <div class="output-block">
+              <span class="out-line">intelligence conglomerate. We engineer</span>
+            </div>
+            <div class="output-block">
+              <span class="out-line accent-magenta">elite human performance across four domains.</span>
+            </div>
+            <div class="output-block separator-line"></div>
+            <div class="output-block hero-tagline">
+              <span class="tagline-word">PRECISION</span>
+              <span class="tagline-sep">&#47;&#47;</span>
+              <span class="tagline-word">PRESTIGE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-stats reveal-element">
+        <div class="stat-item">
+          <span class="stat-num accent-cyan" data-target="4">0</span>
+          <span class="stat-label">MODULES</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num accent-magenta" data-target="1">0</span>
+          <span class="stat-label">CITY</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num accent-cyan" data-target="100">0</span>
+          <span class="stat-label">ELITE %</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Decorative corner HUD marks -->
+    <div class="corner-hud corner-tl" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 40 40"><path d="M0 40 L0 0 L40 0" stroke="#00F2FF" stroke-width="1" fill="none"/></svg>
+    </div>
+    <div class="corner-hud corner-tr" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 40 40"><path d="M40 40 L40 0 L0 0" stroke="#FF00FF" stroke-width="1" fill="none"/></svg>
+    </div>
+    <div class="corner-hud corner-bl" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 40 40"><path d="M0 0 L0 40 L40 40" stroke="#FF00FF" stroke-width="1" fill="none"/></svg>
+    </div>
+    <div class="corner-hud corner-br" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 40 40"><path d="M40 0 L40 40 L0 40" stroke="#00F2FF" stroke-width="1" fill="none"/></svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ECOSYSTEM // 4 MODULE GRID
+  ═══════════════════════════════════════ -->
+  <section id="ecosystem">
+    <div class="section-header reveal-element">
+      <div class="section-tag">[MODULE_REGISTRY: <span class="accent-cyan">LOADED</span>]</div>
+      <h2 class="section-title">THE ECOSYSTEM</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="ecosystem-grid">
+
+      <div class="eco-card reveal-element" data-accent="cyan">
+        <div class="card-id">01</div>
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="16" r="7" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M36 28l4 4-4 4" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="28" y1="32" x2="40" y2="32" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="card-module-tag">SPORTS</span>
+          </div>
+          <h3 class="card-title">01_SPORTS</h3>
+          <p class="card-desc">Elite physical athletic tournaments engineered for peak human performance. Where raw power meets tactical precision.</p>
+          <div class="card-footer">
+            <span class="card-status-dot"></span>
+            <span class="card-status-text">ARENA: ONLINE</span>
+          </div>
+        </div>
+        <div class="card-border-glow"></div>
+      </div>
+
+      <div class="eco-card reveal-element" data-accent="magenta">
+        <div class="card-id">02</div>
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="14" width="36" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 38l-4 4h24l-4-4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M20 26h8M24 22v8" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="33" cy="26" r="2" fill="currentColor"/>
+                <circle cx="38" cy="22" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="card-module-tag">ESPORTS</span>
+          </div>
+          <h3 class="card-title">02_ESPORTS</h3>
+          <p class="card-desc">High-stakes digital competitive arenas where strategic dominance determines legacy. Neural precision, zero latency.</p>
+          <div class="card-footer">
+            <span class="card-status-dot"></span>
+            <span class="card-status-text">SERVER: ACTIVE</span>
+          </div>
+        </div>
+        <div class="card-border-glow"></div>
+      </div>
+
+      <div class="eco-card reveal-element" data-accent="cyan">
+        <div class="card-id">03</div>
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5"/>
+                <ellipse cx="24" cy="24" rx="8" ry="16" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="8" y1="24" x2="40" y2="24" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="12" y1="14" x2="36" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="12" y1="34" x2="36" y2="34" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <span class="card-module-tag">MUN</span>
+          </div>
+          <h3 class="card-title">03_MUN</h3>
+          <p class="card-desc">Next-gen diplomatic simulation and global leadership development. Command chambers where future world leaders are forged.</p>
+          <div class="card-footer">
+            <span class="card-status-dot"></span>
+            <span class="card-status-text">SESSION: LIVE</span>
+          </div>
+        </div>
+        <div class="card-border-glow"></div>
+      </div>
+
+      <div class="eco-card reveal-element" data-accent="magenta">
+        <div class="card-id">04</div>
+        <div class="card-inner">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8l14 8v16L24 40 10 32V16L24 8z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M24 8v32M10 16l14 8 14-8" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <span class="card-module-tag">ROBLOX</span>
+          </div>
+          <h3 class="card-title">04_ROBLOX</h3>
+          <p class="card-desc">Specialized competitive metaverse leagues operating at the frontier of digital sport. Virtual territory, real dominance.</p>
+          <div class="card-footer">
+            <span class="card-status-dot"></span>
+            <span class="card-status-text">REALM: SYNCED</span>
+          </div>
+        </div>
+        <div class="card-border-glow"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TEAM // OPERATOR DOSSIERS
+  ═══════════════════════════════════════ -->
+  <section id="team">
+    <div class="section-header reveal-element">
+      <div class="section-tag">[OPERATOR_DATABASE: <span class="accent-magenta">CLASSIFIED</span>]</div>
+      <h2 class="section-title">THE OPERATORS</h2>
+      <div class="section-rule rule-magenta"></div>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="operator-card reveal-element">
+        <div class="op-id-bar">OP_001</div>
+        <div class="op-avatar">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="10" stroke="#00F2FF" stroke-width="1"/><path d="M10 52c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="#00F2FF" stroke-width="1"/></svg>
+          </div>
+          <div class="avatar-scan-line"></div>
+        </div>
+        <div class="op-data">
+          <div class="op-name">OPERATOR_ALPHA</div>
+          <div class="op-role accent-cyan">// DIRECTOR</div>
+          <div class="op-tags">
+            <span class="op-tag">STRATEGY</span>
+            <span class="op-tag">COMMAND</span>
+          </div>
+        </div>
+        <div class="op-clearance">CLEARANCE: <span class="accent-cyan">OMEGA</span></div>
+      </div>
+
+      <div class="operator-card reveal-element">
+        <div class="op-id-bar">OP_002</div>
+        <div class="op-avatar">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="10" stroke="#FF00FF" stroke-width="1"/><path d="M10 52c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="#FF00FF" stroke-width="1"/></svg>
+          </div>
+          <div class="avatar-scan-line"></div>
+        </div>
+        <div class="op-data">
+          <div class="op-name">OPERATOR_BETA</div>
+          <div class="op-role accent-magenta">// ESPORTS_LEAD</div>
+          <div class="op-tags">
+            <span class="op-tag">DIGITAL</span>
+            <span class="op-tag">TACTICS</span>
+          </div>
+        </div>
+        <div class="op-clearance">CLEARANCE: <span class="accent-magenta">SIGMA</span></div>
+      </div>
+
+      <div class="operator-card reveal-element">
+        <div class="op-id-bar">OP_003</div>
+        <div class="op-avatar">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="10" stroke="#00F2FF" stroke-width="1"/><path d="M10 52c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="#00F2FF" stroke-width="1"/></svg>
+          </div>
+          <div class="avatar-scan-line"></div>
+        </div>
+        <div class="op-data">
+          <div class="op-name">OPERATOR_GAMMA</div>
+          <div class="op-role accent-cyan">// SPORTS_CMD</div>
+          <div class="op-tags">
+            <span class="op-tag">ATHLETICS</span>
+            <span class="op-tag">PERFORMANCE</span>
+          </div>
+        </div>
+        <div class="op-clearance">CLEARANCE: <span class="accent-cyan">ALPHA</span></div>
+      </div>
+
+      <div class="operator-card reveal-element">
+        <div class="op-id-bar">OP_004</div>
+        <div class="op-avatar">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="10" stroke="#FF00FF" stroke-width="1"/><path d="M10 52c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="#FF00FF" stroke-width="1"/></svg>
+          </div>
+          <div class="avatar-scan-line"></div>
+        </div>
+        <div class="op-data">
+          <div class="op-name">OPERATOR_DELTA</div>
+          <div class="op-role accent-magenta">// MUN_LIAISON</div>
+          <div class="op-tags">
+            <span class="op-tag">DIPLOMACY</span>
+            <span class="op-tag">INTEL</span>
+          </div>
+        </div>
+        <div class="op-clearance">CLEARANCE: <span class="accent-magenta">DELTA</span></div>
+      </div>
+
+      <div class="operator-card reveal-element">
+        <div class="op-id-bar">OP_005</div>
+        <div class="op-avatar">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="10" stroke="#00F2FF" stroke-width="1"/><path d="M10 52c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="#00F2FF" stroke-width="1"/></svg>
+          </div>
+          <div class="avatar-scan-line"></div>
+        </div>
+        <div class="op-data">
+          <div class="op-name">OPERATOR_EPSILON</div>
+          <div class="op-role accent-cyan">// META_LEAD</div>
+          <div class="op-tags">
+            <span class="op-tag">METAVERSE</span>
+            <span class="op-tag">SYSTEMS</span>
+          </div>
+        </div>
+        <div class="op-clearance">CLEARANCE: <span class="accent-cyan">GAMMA</span></div>
+      </div>
+
+      <div class="operator-card reveal-element">
+        <div class="op-id-bar">OP_006</div>
+        <div class="op-avatar">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="22" r="10" stroke="#FF00FF" stroke-width="1"/><path d="M10 52c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="#FF00FF" stroke-width="1"/></svg>
+          </div>
+          <div class="avatar-scan-line"></div>
+        </div>
+        <div class="op-data">
+          <div class="op-name">OPERATOR_ZETA</div>
+          <div class="op-role accent-magenta">// OPS_ANALYST</div>
+          <div class="op-tags">
+            <span class="op-tag">ANALYTICS</span>
+            <span class="op-tag">RECON</span>
+          </div>
+        </div>
+        <div class="op-clearance">CLEARANCE: <span class="accent-magenta">BETA</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER // SYSTEM LOG
+  ═══════════════════════════════════════ -->
+  <footer id="location">
+    <div class="footer-grid-rule" aria-hidden="true"></div>
+
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-logo-zone">
+          <img src="https://raw.githubusercontent.com/JustCallMe-Sni/exquisive-assets/main/logo.png"
+               alt="EXQUISIVE"
+               class="footer-logo"
+               onerror="this.style.display='none';" />
+          <div class="footer-brand">EXQUISIVE</div>
+          <div class="footer-slogan">PRECISION // PRESTIGE</div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-section-label">[GEO_DATA]</div>
+        <div class="footer-location">
+          <div class="loc-line">
+            <span class="loc-key">NODE //</span>
+            <span class="loc-val accent-cyan">HYDERABAD, INDIA</span>
+          </div>
+          <div class="loc-line">
+            <span class="loc-key">LAT  //</span>
+            <span class="loc-val">17.3850° N</span>
+          </div>
+          <div class="loc-line">
+            <span class="loc-key">LNG  //</span>
+            <span class="loc-val">78.4867° E</span>
+          </div>
+          <div class="loc-line">
+            <span class="loc-key">TZ   //</span>
+            <span class="loc-val">IST UTC+5:30</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-section-label">[SYS_LOG]</div>
+        <div class="sys-log-feed" id="sys-log">
+          <div class="log-entry">&gt; Boot sequence complete</div>
+          <div class="log-entry">&gt; All modules operational</div>
+          <div class="log-entry">&gt; Network: <span class="accent-cyan">SECURED</span></div>
+          <div class="log-entry">&gt; Operators: <span class="accent-magenta">STANDING_BY</span></div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-section-label">[SYSTEM_REGISTRY]</div>
+        <div class="footer-links">
+          <a href="#ecosystem" class="footer-link">01_SPORTS</a>
+          <a href="#ecosystem" class="footer-link">02_ESPORTS</a>
+          <a href="#ecosystem" class="footer-link">03_MUN</a>
+          <a href="#ecosystem" class="footer-link">04_ROBLOX</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span class="copyright">© 2025 EXQUISIVE SYSTEMS // ALL RIGHTS RESERVED</span>
+        <span class="dev-credit">DEV: <span class="accent-cyan">SNITHIK REDDY</span></span>
+        <span class="build-tag">BUILD: <span class="accent-magenta">v3.7.0-PROD</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
